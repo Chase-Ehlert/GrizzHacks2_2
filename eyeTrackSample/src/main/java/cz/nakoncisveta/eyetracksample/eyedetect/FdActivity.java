@@ -48,16 +48,20 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private static final int TM_CCORR_NORMED = 5;
 
 
-    private double lastX = -1;
-    private double lastY = -1;
-    private double  lastV = -1;
-    private long  lastT = -1;
-    private static final double accelerationScaler = 1.0;
-    private static final double accelerationLowerActivationThreshold  = 20;
-    private static final double accelerationUpperActivationThreshold = 50;
+    private double[] lastX = new double[2];
+    private double[] lastY = new double[2];
+    private double[]  lastV = new double[2];
+    private long[] lastT = new long[2];
+    private static final double accelerationScaler = 500;
+    private static final double accelerationLowerActivationThreshold  = 12;
+    private static final double accelerationUpperActivationThreshold = 100;
     private static final long blinkActivationResetTime = 1000;
     private long remainActivatedUntil = 0;
-    private static final long badDataPointDistanceThreshold = 200;
+    private static final long badDataPointDistanceThreshold = 100;
+    private int isRightEye;
+    private static final int rollingAverageSize = 24;
+    private double[] rollingAverage = new double[rollingAverageSize];
+    private int rollingAverageIndex = 0;
 
 
     private int learn_frames = 0;
@@ -328,17 +332,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                     (int) (r.y + (r.height / 4.5)),
                     (r.width - 2 * r.width / 16) / 2, (int) (r.height / 3.0));
 
-            int left = eyearea_right.x;
-            int right = eyearea_right.x + eyearea_right.width;
-            int top = eyearea_right.y;
-            int bottom = eyearea_right.y + eyearea_right.height;
-            for(int col = left; i < right; i++)
-            {
-                for(int row = top; i < bottom; i++) {
-                    Mat pixel = inputFrame.gray().col(col).row(row);
 
-                }
-            }
             // draw the area - mGray is working grayscale mat, if you want to
             // see area in rgb preview, change mGray to mRgba
             Imgproc.rectangle(mRgba, eyearea_left.tl(), eyearea_left.br(),
@@ -353,8 +347,48 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
             } else {
                 // Learning finished, use the new templates for template
                 // matching
+                isRightEye = 1;
                 match_eye(eyearea_right, teplateR, method);
+                isRightEye = 0;
                 match_eye(eyearea_left, teplateL, method);
+
+                Rect rightEyeBox = new Rect((int)lastX[1] + eyearea_right.x - eyearea_right.width/10,
+                        (int)lastY[1] + eyearea_right.y,
+                        eyearea_right.width/4,
+                        eyearea_right.height/4);
+                Imgproc.rectangle(mRgba, rightEyeBox.tl(), rightEyeBox.br(),
+                        new Scalar(255, 0, 0, 255), 2);
+
+                Rect leftEyeBox = new Rect((int)lastX[0] + eyearea_left.x - eyearea_left.width/10,
+                        (int)lastY[0] + eyearea_left.y,
+                        eyearea_left.width/4,
+                        eyearea_left.height/4);
+                Imgproc.rectangle(mRgba, leftEyeBox.tl(), leftEyeBox.br(),
+                        new Scalar(255, 0, 0, 255), 2);
+
+                int left = rightEyeBox.x;
+                int right = rightEyeBox.x + rightEyeBox.width;
+                int top = rightEyeBox.y;
+                int bottom = rightEyeBox.y + rightEyeBox.height;
+
+                long intensity = 0;//= mGray.rowRange(top, bottom).colRange(left, right).total();
+
+
+                
+                for(int col = left; i < right; i++)
+                {
+                    for(int row = top; i < bottom; i++) {
+
+                        double pixel[] = new double[1];
+                        pixel = mGray.get(row, col);
+                        intensity += pixel[0];
+                    }
+                }
+
+                Imgproc.circle(mRgba, new Point(200,200), (int)intensity/100, new Scalar(255,0,0,255), 5);
+
+
+
 
             }
 
@@ -467,14 +501,15 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
         boolean activated = false;
         boolean bad_data = false;
         double thisA = 0;
+        double filteredA = 0;
         long thisT = System.currentTimeMillis();
         //Skip processing the first data point
         if( remainActivatedUntil > thisT )
             activated = true;
-        else if (lastX >= 0 && lastY >= 0)
+        else if (lastX[isRightEye] >= 0 && lastY[isRightEye] >= 0)
         {
-            long dT = thisT - lastT;
-            double thisD = Math.sqrt((Math.pow(lastX - matchLoc.x, 2) + Math.pow(lastY - matchLoc.y, 2)));
+            long dT = thisT - lastT[isRightEye];
+            double thisD = Math.sqrt((Math.pow(lastX[isRightEye] - matchLoc.x, 2) + Math.pow(lastY[isRightEye] - matchLoc.y, 2)));
 
             if (thisD < badDataPointDistanceThreshold)
             {
@@ -482,13 +517,26 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
 
                 //only process if we have a previous V
-                if (lastV >= 0) {
-                    thisA = Math.abs((lastV - thisV) / dT);
+                if (lastV[isRightEye] >= 0) {
+                    thisA = Math.abs((lastV[isRightEye] - thisV) / dT);
                     thisA = thisA * accelerationScaler;
                     //thisA = thisA / (area.y * area.x);
+                    if(rollingAverageIndex >= rollingAverageSize-1)
+                        rollingAverageIndex = 0;
+                    else
+                        rollingAverageIndex++;
 
-                    if (thisA > accelerationLowerActivationThreshold &&
-                        thisA < accelerationUpperActivationThreshold    )
+                    rollingAverage[rollingAverageIndex] = thisA;
+
+                    double sum = 0;
+                    for(int i = 0; i < rollingAverageSize; i++)
+                    {
+                        sum += rollingAverage[rollingAverageIndex];
+                    }
+                    filteredA = sum / rollingAverageSize;
+
+                    if (filteredA > accelerationLowerActivationThreshold &&
+                        filteredA < accelerationUpperActivationThreshold    )
                     {
 
                         System.out.println("Activated!");
@@ -496,15 +544,15 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                         remainActivatedUntil = thisT + blinkActivationResetTime;
                     }
                 }
-                lastV = thisV;
+                lastV[isRightEye] = thisV;
             }
             else
                 bad_data = true;
         }
         if(!bad_data) {
-            lastT = thisT;
-            lastX = matchLoc.x;
-            lastY = matchLoc.y;
+            lastT[isRightEye] = thisT;
+            lastX[isRightEye] = matchLoc.x;
+            lastY[isRightEye] = matchLoc.y;
         }
         Scalar color;
         if(activated)
@@ -514,9 +562,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
 
         Imgproc.rectangle(mRgba, matchLoc_tx, matchLoc_ty, color);
-        Imgproc.circle(mRgba, new Point(200,200), (int)accelerationUpperActivationThreshold*2, color, 5);
-        Imgproc.circle(mRgba, new Point(200,200), (int)accelerationLowerActivationThreshold*2, color, 5);
-        Imgproc.circle(mRgba, new Point(200,200), (int)thisA*2, color, 5);
+        //Imgproc.circle(mRgba, new Point(200,200), (int)accelerationUpperActivationThreshold*4, color, 5);
+        //Imgproc.circle(mRgba, new Point(200,200), (int)accelerationLowerActivationThreshold*4, color, 5);
+        //Imgproc.circle(mRgba, new Point(200,200), (int)filteredA*4, color, 5);
         Rect rec = new Rect(matchLoc_tx,matchLoc_ty);
 
 
