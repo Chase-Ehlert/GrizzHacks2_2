@@ -59,9 +59,13 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private long remainActivatedUntil = 0;
     private static final long badDataPointDistanceThreshold = 100;
     private int isRightEye;
-    private static final int rollingAverageSize = 24;
+    private static final int rollingAverageSize = 5;
     private double[] rollingAverage = new double[rollingAverageSize];
     private int rollingAverageIndex = 0;
+
+    private static final int rollingVarianceSize = 5;
+    private double[] rollingVariance = new double[rollingVarianceSize];
+    private int rollingVarianceIndex = 0;
 
 
     private int learn_frames = 0;
@@ -371,21 +375,58 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                 int top = rightEyeBox.y;
                 int bottom = rightEyeBox.y + rightEyeBox.height;
 
-                long intensity = 0;//= mGray.rowRange(top, bottom).colRange(left, right).total();
+                long intensity = 0;
 
 
-                
+
                 for(int col = left; i < right; i++)
                 {
                     for(int row = top; i < bottom; i++) {
 
-                        double pixel[] = new double[1];
+                        double pixel[];
                         pixel = mGray.get(row, col);
                         intensity += pixel[0];
                     }
                 }
 
-                Imgproc.circle(mRgba, new Point(200,200), (int)intensity/100, new Scalar(255,0,0,255), 5);
+                if(rollingVarianceIndex >= rollingVarianceSize-1)
+                    rollingVarianceIndex = 0;
+                else
+                    rollingVarianceIndex++;
+
+                rollingVariance[rollingVarianceIndex] = intensity;
+
+                double mean = 0;
+                for(int index = 0; index < rollingVarianceSize; index++)
+                {
+                    mean += rollingVariance[index];
+                }
+                mean = mean / rollingVarianceSize;
+
+                double variance = 0;
+                for(int index = 0; index < rollingVarianceSize; index++)
+                {
+                    variance += Math.pow(rollingVariance[index] - mean, 2);
+                }
+                variance = variance / rollingVarianceSize;
+                double standardDev = Math.sqrt(variance);
+
+                if(rollingAverageIndex >= rollingAverageSize-1)
+                    rollingAverageIndex = 0;
+                else
+                    rollingAverageIndex++;
+
+                rollingAverage[rollingAverageIndex] = standardDev;
+
+                double sum = 0;
+                for(int index = 0; index < rollingAverageSize; index++)
+                {
+                    sum += rollingAverage[index];
+                }
+                double smoothedtdDev = sum / rollingAverageSize;
+
+
+                Imgproc.circle(mRgba, new Point(200,200), (int)smoothedtdDev/10, new Scalar(255,0,0,255), 5);
 
 
 
@@ -521,20 +562,8 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                     thisA = Math.abs((lastV[isRightEye] - thisV) / dT);
                     thisA = thisA * accelerationScaler;
                     //thisA = thisA / (area.y * area.x);
-                    if(rollingAverageIndex >= rollingAverageSize-1)
-                        rollingAverageIndex = 0;
-                    else
-                        rollingAverageIndex++;
 
-                    rollingAverage[rollingAverageIndex] = thisA;
-
-                    double sum = 0;
-                    for(int i = 0; i < rollingAverageSize; i++)
-                    {
-                        sum += rollingAverage[rollingAverageIndex];
-                    }
-                    filteredA = sum / rollingAverageSize;
-
+                    filteredA = thisA;
                     if (filteredA > accelerationLowerActivationThreshold &&
                         filteredA < accelerationUpperActivationThreshold    )
                     {
