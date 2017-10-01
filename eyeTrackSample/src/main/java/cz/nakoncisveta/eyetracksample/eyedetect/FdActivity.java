@@ -63,9 +63,13 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private double[] rollingAverage = new double[rollingAverageSize];
     private int rollingAverageIndex = 0;
 
-    private static final int rollingVarianceSize = 5;
+    private static final int rollingVarianceSize = 10 ;
     private double[] rollingVariance = new double[rollingVarianceSize];
     private int rollingVarianceIndex = 0;
+
+    private static final int longTermAverageSize = 100;
+    private double[] longTermAverage = new double[longTermAverageSize];
+    private int longTermAverageIndex = 0;
 
 
     private int learn_frames = 0;
@@ -352,9 +356,11 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                 // Learning finished, use the new templates for template
                 // matching
                 isRightEye = 1;
-                match_eye(eyearea_right, teplateR, method);
+                if(!match_eye(eyearea_right, teplateR, method))
+                    continue;
                 isRightEye = 0;
-                match_eye(eyearea_left, teplateL, method);
+                if(!match_eye(eyearea_left, teplateL, method))
+                    continue;
 
                 Rect rightEyeBox = new Rect((int)lastX[1] + eyearea_right.x - eyearea_right.width/10,
                         (int)lastY[1] + eyearea_right.y,
@@ -423,10 +429,28 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                 {
                     sum += rollingAverage[index];
                 }
-                double smoothedtdDev = sum / rollingAverageSize;
+                double smoothedStdDev = sum / rollingAverageSize;
+
+                if(longTermAverageIndex >= longTermAverageSize-1)
+                    longTermAverageIndex = 0;
+                else
+                    longTermAverageIndex++;
+
+                longTermAverage[longTermAverageIndex] = smoothedStdDev;
+
+                double longTermAverageSum = 0;
+                for(int index = 0; index < longTermAverageSize; index++)
+                {
+                    longTermAverageSum += longTermAverage[index];
+                }
+                double average = longTermAverageSum / longTermAverageSize;
+
+                double deviationFromAverage = smoothedStdDev / average;
 
 
-                Imgproc.circle(mRgba, new Point(200,200), (int)smoothedtdDev/10, new Scalar(255,0,0,255), 5);
+
+                Imgproc.circle(mRgba, new Point(200,200), 125, new Scalar(0,255,0,255), 5);
+                Imgproc.circle(mRgba, new Point(200,200), (int)(deviationFromAverage*100), new Scalar(255,0,0,255), 5);
 
 
 
@@ -492,14 +516,14 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
     }
 
-    private void match_eye(Rect area, Mat mTemplate, int type) {
+    private boolean match_eye(Rect area, Mat mTemplate, int type) {
         Point matchLoc;
         Mat mROI = mGray.submat(area);
         int result_cols = mROI.cols() - mTemplate.cols() + 1;
         int result_rows = mROI.rows() - mTemplate.rows() + 1;
         // Check for bad template size
         if (mTemplate.cols() == 0 || mTemplate.rows() == 0) {
-            return ;
+            return false;
         }
         Mat mResult = new Mat(result_cols, result_rows, CvType.CV_8U);
 
@@ -596,7 +620,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
         //Imgproc.circle(mRgba, new Point(200,200), (int)filteredA*4, color, 5);
         Rect rec = new Rect(matchLoc_tx,matchLoc_ty);
 
-
+        return !bad_data;
     }
 
     private Mat get_template(CascadeClassifier clasificator, Rect area, int size) {
