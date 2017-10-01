@@ -53,11 +53,11 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private double  lastV = -1;
     private long  lastT = -1;
     private static final double accelerationScaler = 1.0;
-    private static final double accelerationLowerActivationThreshold  = 2.8;
-    private static final double accelerationUpperActivationThreshold = 5;
+    private static final double accelerationLowerActivationThreshold  = 20;
+    private static final double accelerationUpperActivationThreshold = 50;
     private static final long blinkActivationResetTime = 1000;
     private long remainActivatedUntil = 0;
-    private static final long badDataPointDistanceThreshold = 150;
+    private static final long badDataPointDistanceThreshold = 200;
 
 
     private int learn_frames = 0;
@@ -466,6 +466,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
         boolean activated = false;
         boolean bad_data = false;
+        double thisA = 0;
         long thisT = System.currentTimeMillis();
         //Skip processing the first data point
         if( remainActivatedUntil > thisT )
@@ -482,7 +483,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
                 //only process if we have a previous V
                 if (lastV >= 0) {
-                    double thisA = Math.abs((lastV - thisV) / dT);
+                    thisA = Math.abs((lastV - thisV) / dT);
                     thisA = thisA * accelerationScaler;
                     //thisA = thisA / (area.y * area.x);
 
@@ -513,7 +514,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
 
         Imgproc.rectangle(mRgba, matchLoc_tx, matchLoc_ty, color);
-
+        Imgproc.circle(mRgba, new Point(200,200), (int)accelerationUpperActivationThreshold*2, color, 5);
+        Imgproc.circle(mRgba, new Point(200,200), (int)accelerationLowerActivationThreshold*2, color, 5);
+        Imgproc.circle(mRgba, new Point(200,200), (int)thisA*2, color, 5);
         Rect rec = new Rect(matchLoc_tx,matchLoc_ty);
 
 
