@@ -53,7 +53,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private double  lastV = -1;
     private long  lastT = -1;
     private static final double accelerationScaler = 1.0;
-    private static final double accelerationLowerActivationThreshold  = 3.5;
+    private static final double accelerationLowerActivationThreshold  = 3.0;
     private static final double accelerationUpperActivationThreshold = 5;
     private static final long blinkActivationResetTime = 1000;
     private long remainActivatedUntil = 0;
