@@ -48,6 +48,18 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private static final int TM_CCORR_NORMED = 5;
 
 
+    private double lastX = -1;
+    private double lastY = -1;
+    private double  lastV = -1;
+    private long  lastT = -1;
+    private static final double accelerationScaler = 1.0;
+    private static final double accelerationLowerActivationThreshold  = 3.5;
+    private static final double accelerationUpperActivationThreshold = 5;
+    private static final long blinkActivationResetTime = 1000;
+    private long remainActivatedUntil = 0;
+    private static final long badDataPointDistanceThreshold = 150;
+
+
     private int learn_frames = 0;
     private Mat teplateR;
     private Mat teplateL;
@@ -109,9 +121,9 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                         os.close();
 
                         // load cascade file from application resources
-                        InputStream ise = getResources().openRawResource(R.raw.haarcascade_lefteye_2splits);
+                        InputStream ise = getResources().openRawResource(R.raw.haarcascade_eye);
                         File cascadeDirEye = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileEye = new File(cascadeDirEye, "haarcascade_lefteye_2splits.xml");
+                        mCascadeFileEye = new File(cascadeDirEye, "haarcascade_eye.xml");
                         FileOutputStream ose = new FileOutputStream(mCascadeFileEye);
 
                         while ((bytesRead = ise.read(buffer)) != -1) {
@@ -315,6 +327,18 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                     + (r.width - 2 * r.width / 16) / 2,
                     (int) (r.y + (r.height / 4.5)),
                     (r.width - 2 * r.width / 16) / 2, (int) (r.height / 3.0));
+
+            int left = eyearea_right.x;
+            int right = eyearea_right.x + eyearea_right.width;
+            int top = eyearea_right.y;
+            int bottom = eyearea_right.y + eyearea_right.height;
+            for(int col = left; i < right; i++)
+            {
+                for(int row = top; i < bottom; i++) {
+                    Mat pixel = inputFrame.gray().col(col).row(row);
+
+                }
+            }
             // draw the area - mGray is working grayscale mat, if you want to
             // see area in rgb preview, change mGray to mRgba
             Imgproc.rectangle(mRgba, eyearea_left.tl(), eyearea_left.br(),
@@ -440,8 +464,56 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
         Point matchLoc_ty = new Point(matchLoc.x + mTemplate.cols() + area.x,
                 matchLoc.y + mTemplate.rows() + area.y);
 
-        Imgproc.rectangle(mRgba, matchLoc_tx, matchLoc_ty, new Scalar(255, 255, 0,
-                255));
+        boolean activated = false;
+        boolean bad_data = false;
+        long thisT = System.currentTimeMillis();
+        //Skip processing the first data point
+        if( remainActivatedUntil > thisT )
+            activated = true;
+        else if (lastX >= 0 && lastY >= 0)
+        {
+            long dT = thisT - lastT;
+            double thisD = Math.sqrt((Math.pow(lastX - matchLoc.x, 2) + Math.pow(lastY - matchLoc.y, 2)));
+
+            if (thisD < badDataPointDistanceThreshold)
+            {
+                double thisV = thisD / dT;
+
+
+                //only process if we have a previous V
+                if (lastV >= 0) {
+                    double thisA = Math.abs((lastV - thisV) / dT);
+                    thisA = thisA * accelerationScaler;
+                    //thisA = thisA / (area.y * area.x);
+
+                    if (thisA > accelerationLowerActivationThreshold &&
+                        thisA < accelerationUpperActivationThreshold    )
+                    {
+
+                        System.out.println("Activated!");
+                        activated = true;
+                        remainActivatedUntil = thisT + blinkActivationResetTime;
+                    }
+                }
+                lastV = thisV;
+            }
+            else
+                bad_data = true;
+        }
+        if(!bad_data) {
+            lastT = thisT;
+            lastX = matchLoc.x;
+            lastY = matchLoc.y;
+        }
+        Scalar color;
+        if(activated)
+            color = new Scalar(0, 255, 0, 255);
+        else
+            color = new Scalar(255, 0, 0, 255);
+
+
+        Imgproc.rectangle(mRgba, matchLoc_tx, matchLoc_ty, color);
+
         Rect rec = new Rect(matchLoc_tx,matchLoc_ty);
 
 
@@ -463,6 +535,10 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
             Rect e = eyesArray[i];
             e.x = area.x + e.x;
             e.y = area.y + e.y;
+
+
+
+
             Rect eye_only_rectangle = new Rect((int) e.tl().x,
                     (int) (e.tl().y + e.height * 0.4), (int) e.width,
                     (int) (e.height * 0.6));
@@ -478,7 +554,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
             eye_template = new Rect((int) iris.x - size / 2, (int) iris.y
                     - size / 2, size, size);
             Imgproc.rectangle(mRgba, eye_template.tl(), eye_template.br(),
-                    new Scalar(255, 0, 0, 255), 2);
+                    new Scalar(255,0,0,255), 2);
             template = (mGray.submat(eye_template)).clone();
             return template;
         }

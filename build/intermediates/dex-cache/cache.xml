@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Chase\eyeTrackSample\openCVLibrary300\build\intermediates\bundles\default\classes.jar"
+        jar="Z:\Documents\Grizzhacks 2\GrizzHacks2_2\openCVLibrary300\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="067e736597c228906a743b3183c77eb2f1a40fa1">
-        <dex dex="C:\Users\Chase\eyeTrackSample\eyeTrackSample\build\intermediates\pre-dexed\debug\classes_331408aa40175ea30758a973f5d49adeebbba29d.jar" />
+        <dex dex="Z:\Documents\Grizzhacks 2\GrizzHacks2_2\eyeTrackSample\build\intermediates\pre-dexed\debug\classes_cac1a9ccf98532dfc73b1c42124c95538ac2b79b.jar" />
     </item>
 
 </items>

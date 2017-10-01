@@ -1,24 +1,27 @@
 #Internal package file, do not edit.
-#Sat Sep 30 21:00:41 EDT 2017
-2.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
-5.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon.png
-5.set=ANDROID_RESOURCE
-3.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
-6.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\haarcascade_lefteye_2splits.xml
+#Sun Oct 01 02:33:16 GMT-04:00 2017
+2.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+5.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+5.set=DEX
+3.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+6.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\lbpcascade_frontalface.xml
 2.set=ANDROID_RESOURCE
-4.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
-count=7
-0.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
-5.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+4.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+7.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\haarcascade_eye.xml
+7.set=ANDROID_RESOURCE
+count=8
+0.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\face_detect_surface_view.xml
+5.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 4.set=ANDROID_RESOURCE
-6.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
-1.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
-1.set=DEX
-2.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\lbpcascade_frontalface.xml
+6.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+1.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon.png
+1.set=ANDROID_RESOURCE
+7.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+2.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
 6.set=ANDROID_RESOURCE
-0.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
-3.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+0.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+3.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
 3.set=ANDROID_RESOURCE
-1.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-4.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\face_detect_surface_view.xml
+1.base=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+4.file=Z\:\\Documents\\Grizzhacks 2\\GrizzHacks2_2\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\haarcascade_lefteye_2splits.xml
 0.set=ANDROID_RESOURCE

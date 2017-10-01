@@ -6,9 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c53873-6b0f-4aff-b48c-b2014dbbe4a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_android_23.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GrizzHacks2_2.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eyeTrackSample/eyeTrackSample.iml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/eyeTrackSample.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/zip-cache/b1IzCRVDLGnar+VpXERojt9+DrU=" afterPath="" />
@@ -39,8 +36,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-debug.aar" afterPath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-release.aar" afterPath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/buildConfig/androidTest/debug/cz/nakoncisveta/eyetracksample/test/BuildConfig.java" afterPath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/buildConfig/androidTest/debug/cz/nakoncisveta/eyetracksample/test/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/buildConfig/debug/cz/nakoncisveta/eyetracksample/eyedetect/BuildConfig.java" afterPath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/buildConfig/debug/cz/nakoncisveta/eyetracksample/eyedetect/BuildConfig.java" />
@@ -129,8 +124,8 @@
       <file leaf-file-name="FdActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="153" column="48" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
+            <state relative-caret-position="188">
+              <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2992,7 +2987,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2582" height="1562" extended-state="7" />
+    <frame x="-11" y="-11" width="2582" height="1562" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3086,8 +3081,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="153" column="48" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
+        <state relative-caret-position="188">
+          <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
