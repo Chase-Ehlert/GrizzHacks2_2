@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Chase\eyeTrackSample\openCVLibrary300\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="067e736597c228906a743b3183c77eb2f1a40fa1">
+        <dex dex="C:\Users\Chase\eyeTrackSample\eyeTrackSample\build\intermediates\pre-dexed\debug\classes_331408aa40175ea30758a973f5d49adeebbba29d.jar" />
+    </item>
+
+</items>

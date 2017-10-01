@@ -1,0 +1,24 @@
+#Internal package file, do not edit.
+#Sat Sep 30 21:00:41 EDT 2017
+2.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+5.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon.png
+5.set=ANDROID_RESOURCE
+3.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+6.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\haarcascade_lefteye_2splits.xml
+2.set=ANDROID_RESOURCE
+4.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+count=7
+0.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+5.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+4.set=ANDROID_RESOURCE
+6.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+1.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+1.set=DEX
+2.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\lbpcascade_frontalface.xml
+6.set=ANDROID_RESOURCE
+0.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_
+3.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+3.set=ANDROID_RESOURCE
+1.base=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+4.file=C\:\\Users\\Chase\\eyeTrackSample\\eyeTrackSample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\face_detect_surface_view.xml
+0.set=ANDROID_RESOURCE
