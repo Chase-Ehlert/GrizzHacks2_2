@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java" line="434" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="48c53873-6b0f-4aff-b48c-b2014dbbe4a0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity$2.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_eyeTrackSample_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity$1.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity$2.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$id.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$layout.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$raw.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$string.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$styleable.class" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/zip-cache/UVcMk3tFhUHDR5YXJyoyl0dDQTY=" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/zip-cache/UVcMk3tFhUHDR5YXJyoyl0dDQTY=" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/pre-dexed/debug/debug_08da9d03ea88802515cb16ecba8a097831c14381.jar" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/pre-dexed/debug/debug_08da9d03ea88802515cb16ecba8a097831c14381.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/outputs/apk/eyeTrackSample-debug.apk" afterPath="$PROJECT_DIR$/eyeTrackSample/build/outputs/apk/eyeTrackSample-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/r/debug/cz/nakoncisveta/eyetracksample/eyedetect/R.java" afterPath="$PROJECT_DIR$/eyeTrackSample/build/generated/source/r/debug/cz/nakoncisveta/eyetracksample/eyedetect/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/incremental/packageDebug/file-input-save-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/res/merged/debug/layout/face_detect_surface_view.xml" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/res/merged/debug/layout/face_detect_surface_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/eyeTrackSample/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java" afterPath="$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml" afterPath="$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml" />
     </list>
     <ignored path="eyeTrackSample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +78,8 @@
       <file leaf-file-name="FdActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="449" column="0" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
+            <state relative-caret-position="543">
+              <caret line="646" column="0" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,10 +87,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="face_detect_surface_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CameraBridgeViewBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="6256">
               <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
               <folding />
             </state>
@@ -2567,15 +2602,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml" />
         <option value="$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3851" />
+    <option name="x" value="-11" />
     <option name="y" value="-11" />
-    <option name="width" value="2326" />
-    <option name="height" value="1258" />
+    <option name="width" value="1692" />
+    <option name="height" value="1062" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2605,7 +2641,6 @@
       <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2614,54 +2649,9 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GrizzHacks2_2" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCVLibrary300" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GrizzHacks2_2" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCVLibrary300" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GrizzHacks2_2" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openCVLibrary300" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2711,7 +2701,7 @@
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
         <option name="SHOW_STATIC_VARS" value="true" />
@@ -3042,15 +3032,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3851" y="-11" width="2326" height="1258" extended-state="6" />
-    <editor active="true" />
+    <frame x="-11" y="-11" width="1692" height="1062" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875368" sideWeight="0.48746642" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32804233" sideWeight="0.48393574" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42787045" sideWeight="0.51253355" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14159292" sideWeight="0.5103203" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44553483" sideWeight="0.759624" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3058,12 +3048,12 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21575649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17095588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42787045" sideWeight="0.49283797" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37057522" sideWeight="0.48967972" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3087,11 +3077,58 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6256">
+          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9925">
+          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3130,22 +3167,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="164" column="12" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="6256">
           <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/res/layout/face_detect_surface_view.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/java/cz/nakoncisveta/eyetracksample/eyedetect/FdActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="449" column="0" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
+        <state relative-caret-position="543">
+          <caret line="646" column="0" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

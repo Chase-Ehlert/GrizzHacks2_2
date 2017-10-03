@@ -71,6 +71,14 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     private double[] longTermAverage = new double[longTermAverageSize];
     private int longTermAverageIndex = 0;
 
+    private long lastBlinkTime = 0;
+    private long displayBlinkTextUntil = -1;
+    private static final double blinkDetectionThreshold = 125;
+
+    private double bpm = 0;
+    private long lastResetTime = 0;
+
+
 
     private int learn_frames = 0;
     private Mat teplateR;
@@ -195,55 +203,6 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
 
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.fd_activity_surface_view);
         mOpenCvCameraView.setCvCameraViewListener(this);
-
-        mMethodSeekbar = (SeekBar) findViewById(R.id.methodSeekBar);
-        mValue = (TextView) findViewById(R.id.method);
-
-        mMethodSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar)
-            {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar)
-            {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress,
-                                          boolean fromUser)
-            {
-                method = progress;
-                switch (method) {
-                    case 0:
-                        mValue.setText("TM_SQDIFF");
-                        break;
-                    case 1:
-                        mValue.setText("TM_SQDIFF_NORMED");
-                        break;
-                    case 2:
-                        mValue.setText("TM_CCOEFF");
-                        break;
-                    case 3:
-                        mValue.setText("TM_CCOEFF_NORMED");
-                        break;
-                    case 4:
-                        mValue.setText("TM_CCORR");
-                        break;
-                    case 5:
-                        mValue.setText("TM_CCORR_NORMED");
-                        break;
-                }
-
-
-            }
-        });
     }
 
     @Override
@@ -285,6 +244,10 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
+        long currentTime = System.currentTimeMillis();
+
+        //if(currentTime - lastResetTime > 10000)
+        //    learn_frames = 0;
 
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
@@ -352,6 +315,7 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                 teplateR = get_template(mJavaDetectorEye, eyearea_right, 24);
                 teplateL = get_template(mJavaDetectorEye, eyearea_left, 24);
                 learn_frames++;
+                lastResetTime = currentTime;
             } else {
                 // Learning finished, use the new templates for template
                 // matching
@@ -445,16 +409,45 @@ public class FdActivity extends Activity implements CvCameraViewListener2 {
                 }
                 double average = longTermAverageSum / longTermAverageSize;
 
-                double deviationFromAverage = smoothedStdDev / average;
-
-
-
-                Imgproc.circle(mRgba, new Point(200,200), 125, new Scalar(0,255,0,255), 5);
-                Imgproc.circle(mRgba, new Point(200,200), (int)(deviationFromAverage*100), new Scalar(255,0,0,255), 5);
+                double deviationFromAverage = (smoothedStdDev / average)*100;
 
 
 
 
+                if(deviationFromAverage > blinkDetectionThreshold && currentTime > displayBlinkTextUntil)
+                {
+                    long timeBetweenBlink = currentTime - lastBlinkTime;
+                    bpm = 60000 / timeBetweenBlink;
+                    lastBlinkTime = currentTime;
+                    displayBlinkTextUntil = currentTime + 1000;
+                }
+
+                Imgproc.circle(mRgba, new Point(200,200), (int)blinkDetectionThreshold, new Scalar(0,255,0,255), 5);
+                Imgproc.circle(mRgba, new Point(200,200), (int)(deviationFromAverage), new Scalar(255,0,0,255), 5);
+
+
+
+
+            }
+            int centerx = mGray.width() / 2;
+            if(displayBlinkTextUntil > currentTime)
+            {
+                Imgproc.putText(mRgba, "Blink Detected",
+                        new Point(centerx, 50),
+                        Core.FONT_HERSHEY_SIMPLEX, 1.5, new Scalar(0, 255, 0,
+                                255),5);
+            }
+
+            if (bpm > 0)
+            {
+                String displayText = new String();
+                displayText = "Blink Rate: ";
+                displayText += String.valueOf(bpm);
+
+                Imgproc.putText(mRgba, displayText,
+                        new Point(centerx, mGray.height() - 50),
+                        Core.FONT_HERSHEY_SIMPLEX, 1.5, new Scalar(0, 255, 0,
+                                255), 5);
             }
 
 
